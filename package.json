@@ -2,7 +2,7 @@
   "name": "proiect_tpi",
   "version": "1.0.0",
   "description": "Weather application",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/RaduPredescu/Weather/issues"
   },
-  "homepage": "https://github.com/RaduPredescu/Weather#readme"
+  "homepage": "https://github.com/RaduPredescu/Weather#readme",
+  "dependencies": {
+    "d3": "^7.9.0",
+    "express": "^4.18.3",
+    "fast-xml-parser": "^4.3.5",
+    "xml2js": "^0.6.2"
+  }
 }
