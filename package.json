@@ -1,0 +1,19 @@
+{
+  "name": "proiect_tpi",
+  "version": "1.0.0",
+  "description": "Weather application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RaduPredescu/Weather.git"
+  },
+  "author": "Radu Predescu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RaduPredescu/Weather/issues"
+  },
+  "homepage": "https://github.com/RaduPredescu/Weather#readme"
+}
