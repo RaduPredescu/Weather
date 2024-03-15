@@ -6,10 +6,8 @@ const xml2js = require('xml2js');
 const app = express();
 const PORT = process.env.PORT || 8008;
 
-// Middleware pentru a servi fișierele statice din dosarul 'public'
 app.use(express.static('public'));
 
-// Încărcarea datelor din fișiere XML în memorie
 const citiesData = {};
 
 fs.readdirSync('./data').forEach(file => {
@@ -26,7 +24,6 @@ fs.readdirSync('./data').forEach(file => {
     });
 });
 
-// Rute
 app.get('/data/:city', (req, res) => {
     const city = req.params.city;
     if (citiesData[city]) {
@@ -36,7 +33,6 @@ app.get('/data/:city', (req, res) => {
     }
 });
 
-// Pornirea serverului
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
