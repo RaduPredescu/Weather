@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,5 +10,78 @@
     <h1>Weather Dashboard</h1>
     <div id="chart-container"></div>
     <script src="scripts/main.js"></script>
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Data</title>
+</head>
+<body>
+    <h1>Weather Data</h1>
+    <div id="weatherContainer"></div>
+
+    <script>
+        // Funcție pentru încărcarea și procesarea fișierului XML
+        function loadXML() {
+            const xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4) {
+                    if (this.status == 200) {
+                        // Parsarea răspunsului XML
+                        const xmlDoc = this.responseXML;
+                        console.log(xmlDoc); // Verificăm obiectul XML în consolă
+
+                        if (xmlDoc) {
+                            const cities = xmlDoc.getElementsByTagName("city");
+                            console.log(cities); // Verificăm lista de orașe în consolă
+
+                            // Construirea HTML-ului pentru afișarea datelor
+                            let html = "";
+                            for (let i = 0; i < cities.length; i++) {
+                                const city = cities[i];
+                                const name = city.querySelector("name").textContent;
+                                const temperature = city.querySelector("temperature").textContent;
+                                const humidity = city.querySelector("humidity").textContent;
+                                const pressure = city.querySelector("pressure").textContent;
+                                const precipitation = city.querySelector("precipitation").textContent;
+
+                                html += `
+                                    <div>
+                                        <h2>${name}</h2>
+                                        <p>Temperature: ${temperature}°C</p>
+                                        <p>Humidity: ${humidity}%</p>
+                                        <p>Pressure: ${pressure} hPa</p>
+                                        <p>Precipitation: ${precipitation} mm</p>
+                                    </div>
+                                `;
+                            }
+                            // Afișăm datele în containerul HTML
+                            document.getElementById("weatherContainer").innerHTML = html;
+                        } else {
+                            // Afișăm un mesaj de eroare dacă nu s-a putut parsă fișierul XML
+                            console.error("Error parsing XML.");
+                            document.getElementById("weatherContainer").innerHTML = "<p>Error parsing XML.</p>";
+                        }
+                    } else {
+                        // Afișăm un mesaj de eroare dacă există o problemă la încărcarea fișierului XML
+                        console.error("Error loading XML.");
+                        document.getElementById("weatherContainer").innerHTML = "<p>Error loading XML.</p>";
+                    }
+                }
+            };
+            // Încărcăm fișierul XML
+            xhttp.open("GET", "data.xml", true);
+            xhttp.send();
+        }
+
+        // Apelăm funcția pentru încărcarea și procesarea fișierului XML
+        loadXML();
+    </script>
 </body>
 </html>

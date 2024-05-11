@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<weather_data>
+    <city>
+        <name>București</name>
+        <temperature>20</temperature>
+        <humidity>60</humidity>
+        <pressure>1013</pressure>
+        <precipitation>0.1</precipitation>
+    </city>
+    
+    <city>
+        <name>Cluj-Napoca</name>
+        <temperature>18</temperature>
+        <humidity>55</humidity>
+        <pressure>1010</pressure>
+        <precipitation>0.0</precipitation>
+    </city>
+
+    <city>
+        <name>Timișoara</name>
+        <temperature>22</temperature>
+        <humidity>62</humidity>
+        <pressure>1015</pressure>
+        <precipitation>0.2</precipitation>
+    </city>
+    
+    <city>
+        <name>Targu Jiu</name>
+        <temperature>25</temperature>
+        <humidity>20</humidity>
+        <pressure>1000</pressure>
+        <precipitation>0.1</precipitation>
+    </city>
+
+</weather_data>

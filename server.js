@@ -24,7 +24,14 @@ fs.readdirSync('./data').forEach(file => {
     });
 });
 
-app.get('/data/:city', (req, res) => {
+// Ruta pentru pagina HTML
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/public/index.html');
+});
+
+
+
+app.get('data/data/:city', (req, res) => {
     const city = req.params.city;
     if (citiesData[city]) {
         res.json(citiesData[city]);
