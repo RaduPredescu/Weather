@@ -30,6 +30,7 @@
     <div id="weatherContainer"></div>
 
     <script>
+        loadXML("București", "temperature");
         // Funcție pentru încărcarea și procesarea fișierului XML în funcție de orașul și tipul de dată selectat
         function loadXML(city, dataType) {
             console.log("Selected city:", city);
@@ -78,7 +79,6 @@
         }
 
         // Încărcăm inițial datele pentru orașul implicit (București) și tipul de dată implicit (temperatura)
-        loadXML("Bucuresti", "temperature");
     </script>
 </body>
 </html>
